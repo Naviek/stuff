@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int lower(int n) {
@@ -18,12 +18,10 @@ int upper(int n) {
 string caesar(string s, int n) {
 	for (int i = 0; i < s.size(); ++i) {
 		if ('a' <= s[i] and s[i] <= 'z') {
-			//s[i] = lower((int)s[i] + n);
-			s[i] = (int)n <= 122 ? n : n - 26;
+			s[i] = lower((int)s[i] + n);
 		}
 		if ('A' <= s[i] and s[i] <= 'Z') {
-			//s[i] = upper((int)s[i] + n);
-			s[i] = (int)n <= 90 ? n : n - 26;
+			s[i] = upper((int)s[i] + n);
 		}
 	}
 	return s;
